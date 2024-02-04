@@ -15,6 +15,15 @@ namespace BackEnd.Services.Implementations
             _unidadDeTrabajo = unidadDeTrabajo;
         }
 
+
+
+        public bool AddCategory(CategoryModel category)
+        {
+            Category entity = Convertir(category);
+            _unidadDeTrabajo._categoryDAL.Add(entity);
+            return _unidadDeTrabajo.Complete();
+        }
+
         CategoryModel Convertir(Category category)
         {
             return new CategoryModel
@@ -34,17 +43,11 @@ namespace BackEnd.Services.Implementations
                 Description = category.Description
             };
         }
-
-        public bool AddCategory(CategoryModel category)
-        {
-            Category entity = Convertir(category);
-            _unidadDeTrabajo._categoryDAL.Add(entity);
-            return _unidadDeTrabajo.Complete();
-        }
-
         public bool DeteleCategory(CategoryModel category)
         {
-            throw new NotImplementedException();
+            Category entity = Convertir(category);
+            _unidadDeTrabajo._categoryDAL.Remove(entity);
+            return _unidadDeTrabajo.Complete();
         }
 
         public CategoryModel GetById(int id)
@@ -71,7 +74,9 @@ namespace BackEnd.Services.Implementations
 
         public bool UpdateCategory(CategoryModel category)
         {
-            throw new NotImplementedException();
+            Category entity = Convertir(category);
+            _unidadDeTrabajo._categoryDAL.Update(entity);
+            return _unidadDeTrabajo.Complete();
         }
     }
 }
