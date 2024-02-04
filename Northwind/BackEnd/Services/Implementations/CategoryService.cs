@@ -14,9 +14,6 @@ namespace BackEnd.Services.Implementations
         {
             _unidadDeTrabajo = unidadDeTrabajo;
         }
-
-
-
         public bool AddCategory(CategoryModel category)
         {
             Category entity = Convertir(category);

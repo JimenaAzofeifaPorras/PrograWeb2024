@@ -13,6 +13,8 @@ namespace DAL.Implementations
 
         public ICategoryDAL _categoryDAL { get; }
 
+        public ISupplierDAL _supplierDAL { get; }
+
         private readonly NorthWindContext _context;
 
         public UnidadDeTrabajo(NorthWindContext northWindContext,
@@ -23,6 +25,13 @@ namespace DAL.Implementations
             _categoryDAL = categoryDAL;
         }
 
+        public UnidadDeTrabajo(NorthWindContext northWindContext,
+                                ISupplierDAL supplierDAL
+                                )
+        {
+            _context = northWindContext;
+            _supplierDAL = supplierDAL;
+        }
 
         public bool Complete()
         {
