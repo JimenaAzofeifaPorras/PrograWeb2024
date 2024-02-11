@@ -14,13 +14,21 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<NorthWindContext>();
 
+
 #region DI
 builder.Services.AddScoped<IUnidadDeTrabajo, UnidadDeTrabajo>();
 builder.Services.AddScoped<ICategoryDAL, CategoryDALImpl>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<ISupplierDAL, SupplierDALImpl>();
+builder.Services.AddScoped<ISupplierService, SupplierService>();
+
+builder.Services.AddScoped<IProductDAL, ProductDALImpl>();
+builder.Services.AddScoped<IProductService, ProductService>();
+
+builder.Services.AddScoped<IOrderDAL, OrderDALImpl>();
+builder.Services.AddScoped<IOrderService, OrderService>();
+
 #endregion
-
-
 
 
 var app = builder.Build();

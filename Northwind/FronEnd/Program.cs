@@ -8,7 +8,9 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddHttpClient<IServiceRepository, ServiceRepository>();
 builder.Services.AddScoped<IServiceRepository, ServiceRepository>();
-builder.Services.AddHttpClient<ICategoryHelper, CategoryHelper>();
+builder.Services.AddScoped<ICategoryHelper, CategoryHelper>();
+builder.Services.AddScoped<ISupplierHelper, SupplierHelper>();
+builder.Services.AddScoped<IProductHelper, ProductHelper>();
 
 var app = builder.Build();
 

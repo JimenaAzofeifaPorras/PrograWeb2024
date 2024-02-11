@@ -15,6 +15,10 @@ namespace DAL.Implementations
 
         public ISupplierDAL _supplierDAL { get; }
 
+        public IProductDAL _productDAL { get; }
+
+        public IOrderDAL _orderDAL { get; }
+
         private readonly NorthWindContext _context;
 
         public UnidadDeTrabajo(NorthWindContext northWindContext,
@@ -31,6 +35,14 @@ namespace DAL.Implementations
         {
             _context = northWindContext;
             _supplierDAL = supplierDAL;
+        }
+
+        public UnidadDeTrabajo(NorthWindContext northWindContext,
+                                IProductDAL productDAL
+                                )
+        {
+            _context = northWindContext;
+            _productDAL = productDAL;
         }
 
         public bool Complete()
