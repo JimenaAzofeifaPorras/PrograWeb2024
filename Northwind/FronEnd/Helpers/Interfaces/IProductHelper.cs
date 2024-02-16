@@ -9,7 +9,7 @@ namespace FrontEnd.Helpers.Interfaces
         List<ProductViewModel> GetAll();
         ProductViewModel GetById(int id);
         ProductViewModel AddProduct(ProductViewModel ProductViewModel);
-        ProductViewModel EdiProduct(ProductViewModel ProductViewModel);
+        ProductViewModel EditProduct(ProductViewModel ProductViewModel);
 
         void DeleteProduct(int id);
     }

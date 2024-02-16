@@ -1,4 +1,4 @@
-﻿using FrontEnd.Helpers.Implementations;
+﻿ using FrontEnd.Helpers.Implementations;
 using FrontEnd.Helpers.Interfaces;
 using FrontEnd.Models;
 using Microsoft.AspNetCore.Http;
@@ -84,7 +84,7 @@ namespace FrontEnd.Controllers
         {
             try
             {
-                ProductHelper.EdiProduct(product);
+                ProductHelper.EditProduct(product);
                 return RedirectToAction(nameof(Index));
             }
             catch

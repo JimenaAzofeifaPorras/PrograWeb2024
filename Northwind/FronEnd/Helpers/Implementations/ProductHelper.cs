@@ -66,7 +66,7 @@ namespace FrontEnd.Helpers.Implementations
             }
         }
 
-        public ProductViewModel EdiProduct(ProductViewModel ProductViewModel)
+        public ProductViewModel EditProduct(ProductViewModel ProductViewModel)
         {
             ProductViewModel product = new ProductViewModel();
             HttpResponseMessage responseMessage = _repository.PutResponse("api/Product", ProductViewModel);
@@ -111,5 +111,6 @@ namespace FrontEnd.Helpers.Implementations
             Product = Convertir(resultado);
             return Product;
         }
+
     }
 }
